@@ -3,8 +3,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     padding: 20px;
-    height: 200px;
-    width: 500px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of viewport */
 }
 
 h1 {
