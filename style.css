@@ -1,77 +1,136 @@
-/* Styles for Google Search Page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     padding: 20px;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full height of viewport */
+    height: 200px;
+    width: 500px;
 }
 
 h1 {
     color: #333;
-    text-align: center;
 }
 
 .search {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    --input-line: #cccccc;
+    --input-text-color: #808080;
+    --input-text-hover-color: transparent;
+    --input-border-color: #808080;
+    --input-border-hover-color: #999999;
+    --input-bg-color: #333333;
+    --search-max-width: 600px;
+    --search-min-width: 300px;
+    --border-radius: 5px;
+    --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .search-box {
-    display: flex;
-    max-width: 600px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
+    max-width: var(--search-max-width);
+    min-width: var(--search-min-width);
+    height: 35px;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    padding: 5px 15px;
+    background: var(--input-bg-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-cubic-bezier);
 }
 
+.search-box:hover {
+    border-color: var(--input-border-hover-color);
+}
+
+/* Section input */
 .search-field {
-    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: -5px;
+    border: 0;
 }
 
 .input {
-    width: 100%;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
+    width: calc(100% - 29px);
+    height: 100%;
+    border: 0;
+    border-color: transparent;
+    font-size: 1rem;
+    padding-right: 0px;
+    color: var(--input-line);
+    background: var(--input-bg-color);
+    border-right: 2px solid var(--input-border-color);
+    outline: none;
 }
 
+.input::-webkit-input-placeholder {
+    color: var(--input-text-color);
+}
+
+.input::-moz-input-placeholder {
+    color: var(--input-text-color);
+}
+
+.input::-ms-input-placeholder {
+    color: var(--input-text-color);
+}
+
+.input:focus::-webkit-input-placeholder {
+    color: var(--input-text-hover-color);
+}
+
+.input:focus::-moz-input-placeholder {
+    color: var(--input-text-hover-color);
+}
+
+.input:focus::-ms-input-placeholder {
+    color: var(--input-text-hover-color);
+}
+
+/* Search button */
 .search-box-icon {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    width: 52px;
+    height: 35px;
+    position: absolute;
+    top: -6px;
+    right: -21px;
+    background: transparent;
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    transition: var(--transition-cubic-bezier);
 }
 
 .search-box-icon:hover {
-    background-color: #555;
+    background: var(--input-border-color);
+}
+
+.btn-icon-content {
+    width: 52px;
+    height: 35px;
+    top: -6px;
+    right: -21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    transition: var(--transition-cubic-bezier);
+    opacity: .4;
+}
+
+.btn-icon-content:hover {
+    opacity: .8;
 }
 
 .search-icon {
-    fill: #fff;
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
 }
 
-#filetype {
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
+/* Styles for Google Search Page */
 input[type="submit"] {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -82,31 +141,4 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
-}
-
-/* Responsive Styles */
-@media only screen and (max-width: 600px) {
-    body {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    h1 {
-        font-size: 24px; /* Adjust heading size for smaller screens */
-    }
-
-    .search {
-        margin-top: 10px; /* Adjust margin for smaller screens */
-    }
-
-    .search-box {
-        max-width: 100%; /* Adjust max-width for smaller screens */
-    }
-
-    .input {
-        font-size: 14px; /* Adjust input font size for smaller screens */
-    }
-
-    input[type="submit"] {
-        font-size: 14px; /* Adjust button font size for smaller screens */
-    }
 }
