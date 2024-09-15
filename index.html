@@ -203,12 +203,12 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("nDicIAnnT_cqJKBNs");  // Replace with your EmailJS public key
+            emailjs.init("jP3xZ81mVI9K6mzB8");  // Replace with your EmailJS public key
 
             document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();  // Prevent default form submission
 
-                emailjs.sendForm('service_qu5jxio', 'template_l7jakb8', this)
+                emailjs.sendForm('service_x2ek5rb', 'template_qxijwkc', this)
                     .then(function (response) {
                         alert('Message sent successfully!');
                         console.log('SUCCESS!', response.status, response.text);
