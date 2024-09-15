@@ -180,10 +180,13 @@
                 <form id="contact-form" class="contact__form">
                     <input type="text" name="from_name" placeholder="Name" class="contact__input" required>
                     <input type="email" name="from_email" placeholder="Email" class="contact__input" required>
-                    <textarea name="message" cols="0" rows="10" placeholder="Your Message" class="contact__input" required></textarea>
+                    <input type="hidden" name="to_email" value="recipient@example.com"> <!-- Add recipient email -->
+                    <textarea name="message" cols="0" rows="10" placeholder="Your Message" class="contact__input"
+                        required></textarea>
                     <input type="submit" value="Send" class="contact__button button">
                 </form>
-                
+
+
             </div>
         </section>
 
@@ -218,6 +221,7 @@
                     });
             });
         });
+
     </script>
 
     <!--===== SCROLL REVEAL =====-->
